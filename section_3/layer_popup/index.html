@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./custom.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="btn-inner">
+            <button class="btn-open" type="button">팝업열기1</button>
+            <button class="btn-open" type="button">팝업열기2</button>
+        </div>
+        <div class="popup-inner">
+            <div class="popup">
+                <p>11111팝업입니다</p>
+                <button class="btn-close" type="button">닫기</button>
+            </div>
+        <div class="popup">
+            <p>22222팝업입니다</p>
+            <button class="btn-close" type="button">닫기</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var popUp = function popUp (btnOpen, btnClose) {
+                
+                $(btnOpen).on("click", function() {
+                    var $btn    = $(this),
+                    idx         = $btn.index();
+
+                    $(".popup-inner .popup").eq(idx).show();
+                });
+
+                $(btnClose).on("click", function() {
+                    $(".popup").hide();
+                });
+        };
+        
+        $(function() {
+            popUp(".btn-inner .btn-open", ".btn-close");
+        });
+    </script>
+    
+</body>
+</html>
