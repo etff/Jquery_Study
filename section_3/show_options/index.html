@@ -23,5 +23,36 @@
             <span class="tx">선택 옵션4</span>
         </div>
     </div>
+
+    <script>
+        var fnToggleSlide = function(targetId, btn) {
+            var $btn        = $(btn),
+                $targetId   = $(targetId);
+            
+            if($btn.hasClas("on")) {
+                $btn.removeClass("on");
+                $btn.find(".ir").text("열기");
+                $targetId.slideUp(200);
+            } else {
+                $btn.addClass("on");
+                $btn.find(".ir").text("닫기");
+                $targetId.slideDown(200);
+            }
+            return false;
+        };
+
+        var toggleClick = function(targetId, btn) {
+            var $btn        = $(btn),
+                $targetId   = $(targetId);
+
+                $btn.click(function() {
+                    fnToggleSlide(targetId, btn);
+                });
+        };
+
+        $(function() {
+            toggleClick("#gds_mod", ".opt");
+        });
+    </script>
 </body>
 </html>
