@@ -12,11 +12,11 @@ ul.eventList li > a > .fixLay > .desc > .tit {margin-bottom:5px;}
 ul.eventList li > a > .fixLay > .desc > .tit > strong {display:inline-block; overflow:hidden; width:100%; line-height:15px; font-size:14px; font-weight:bold; text-overflow:ellipsis; white-space:nowrap; word-wrap:normal;}
 ul.eventList li > a > .fixLay > .desc > .cost {position:relative; height:37px;}
 ul.eventList li > a > .fixLay > .desc > .cost > del {position:absolute; top:0; right:0; color:#b2b2b2; font-size:13px; font-weight:normal; text-align:right;}
-ul.eventList li > a > .fixLay > .desc > .cost > strong {display:block; padding-top:15px; color:#ff6666; font-size:19px; text-align:right; letter-spacing:-0.5px;}
+ul.eventList li > a > .fixLay > .desc > .cost > strong {display:block; padding-top:15px; color:#FF0040; font-size:19px; text-align:right; letter-spacing:-0.5px;}
 ul.eventList li > a > .fixLay > .desc > .cost > span {display:block; padding-top:15px; color:#999; font-size:19px; text-align:right; letter-spacing:-0.5px;}
 ul.eventList li > a > .moveLay {position:relative; top:-5px; left:0;}
 ul.eventList li > a.on .moveLay {z-index:3;}
-ul.eventList li > a > .moveLay > .pointLabel {position:absolute; top:-35px; left:15px; width:60px; height:40px; line-height:40px; z-index:3; background-color:#ff6666; color:#fff; font-size:13px; text-align:center;}
+ul.eventList li > a > .moveLay > .pointLabel {position:absolute; top:-35px; left:15px; width:60px; height:40px; line-height:40px; z-index:3; background-color:#F6546A; color:#fff; font-size:13px; text-align:center;}
 ul.eventList li > a > .moveLay > .moveBox {display:block; position:relative; top:5px; left:0; width:263px; height:226px; padding:13px 15px 12px; margin-top:5px; z-index:3; border:1px solid #e5e5e5; background-color:#fff;}
 ul.eventList li > a > .moveLay > .moveBox > .tit {padding-bottom:14px; margin-bottom:14px; border-bottom:1px dashed #ccc;}
 ul.eventList li > a > .moveLay > .moveBox > .tit > strong {display:inline-block; overflow:hidden; width:100%; height:32px; line-height:16px; font-size:14px; font-weight:bold;}

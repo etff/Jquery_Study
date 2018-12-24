@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./custom">
+    <link rel="stylesheet" href="./custom.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 </head>
@@ -20,8 +20,8 @@
                         <div class="dim"></div>
                     </div>
                     <div class="desc">
-                        <div class="tit" title="고양이 용품 특별할인">
-                            <strong>고양이가 좋아하는 묶음세트</strong>
+                        <div class="tit" title="훌륭한 고양이 집사세트">
+                            <strong>훌륭한 고양이 집사세트</strong>
                         </div>
                         <div class="cost"><strong>20,000원~</strong></div>
                     </div>
@@ -41,6 +41,56 @@
             </a>
         </li>
     </ul>
+
+    <script>
+        function slideLayout(target) {
+            var $target = $(target);
+
+            $target.each(function(i) {
+                var $li = $(this),
+                    $imgDim = $("<div class='dim'></div>"),
+                    $this,
+                    $moveLay,
+                    $dim;
+
+                var init = function() {
+                    $moveLay = $this.find($("a .moveLay"));
+                    $dim = $this.find($(".fixLay > .img > .dim"));
+                };
+
+                //dim 추가
+		        $imgDim.appendTo($li.find($(".fixLay > .img")));
+                
+                $li.mouseenter(function() {
+                    $this = $(this);
+                    init();
+
+                    $moveLay.stop().animate({
+                        top : "-236px"
+                    }, 400);
+
+                    $dim.show();
+                });
+
+                //마우스아웃일때
+                $li.mouseleave(function () {
+                    $this = $(this);
+                    init();
+
+                    $moveLay.stop().animate({
+                        top: "-5px"
+                    }, 400);
+
+                    $dim.fadeOut(400);
+                });
+
+            });
+        }
+
+        $(function() {
+            slideLayout("ul.eventList li");
+        });
+    </script>
 </body>
 
 </html>
