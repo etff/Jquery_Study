@@ -27,7 +27,47 @@
             </div>
         </div>
     </div>
+    <script>
+        $(window).scroll(function() {
+            var $this   = $(this),
+                $target = $(".nav");
+            
+            if ($this.scrollTop() > 60) {
+                $target.addClass("on");
+                $target.stop().animate({
+                    top : 0
+                }, 100);
+            } else {
+                $target.removeClass("on");
+                $target.stop().animate({
+                    top : "-70px"
+                }, 100);
+            }
 
+            $(".innerWrap .inner").each(function(i) {
+                var $innerHt    = $(this).offset().top - 70,
+                    $navHt      = $(".nav").offset().top,
+                    $innerIdx   = $(this).index(),
+                    $aIdx       = $(".nav > a").eq($innerIdx).indxe();
+                
+                    if($innerHt < $navHt || $innerHt == $navHt){
+                        $(".nav > a").eq($aIdx).addClass("chk").siblings().removeClass("chk");
+                    } else {
+    	                $(".nav > a").eq($aIdx).removeClass("chk");
+                    }
+                });
+            });
+
+            $(".nav a").click(function(){
+                var id = $(this).attr("href");
+            
+                    $("html,body").animate({
+                        scrollTop: ($(id).offset().top) - 70 
+                    //컨텐츠 상단 여백을 위해 - 70 해줌
+                    }, 400);
+                return false
+            });
+    </script>
 </body>
 
 </html>
